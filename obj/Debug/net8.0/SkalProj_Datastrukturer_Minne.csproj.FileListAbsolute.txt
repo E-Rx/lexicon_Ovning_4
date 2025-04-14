@@ -1,0 +1,14 @@
+/Users/eliserochaix/Lexicon VT2025 C#/Ovning4_SkalProj-master/SkalProj_Datastrukturer_Minne/bin/Debug/net8.0/SkalProj_Datastrukturer_Minne
+/Users/eliserochaix/Lexicon VT2025 C#/Ovning4_SkalProj-master/SkalProj_Datastrukturer_Minne/bin/Debug/net8.0/SkalProj_Datastrukturer_Minne.deps.json
+/Users/eliserochaix/Lexicon VT2025 C#/Ovning4_SkalProj-master/SkalProj_Datastrukturer_Minne/bin/Debug/net8.0/SkalProj_Datastrukturer_Minne.runtimeconfig.json
+/Users/eliserochaix/Lexicon VT2025 C#/Ovning4_SkalProj-master/SkalProj_Datastrukturer_Minne/bin/Debug/net8.0/SkalProj_Datastrukturer_Minne.dll
+/Users/eliserochaix/Lexicon VT2025 C#/Ovning4_SkalProj-master/SkalProj_Datastrukturer_Minne/bin/Debug/net8.0/SkalProj_Datastrukturer_Minne.pdb
+/Users/eliserochaix/Lexicon VT2025 C#/Ovning4_SkalProj-master/SkalProj_Datastrukturer_Minne/obj/Debug/net8.0/SkalProj_Datastrukturer_Minne.GeneratedMSBuildEditorConfig.editorconfig
+/Users/eliserochaix/Lexicon VT2025 C#/Ovning4_SkalProj-master/SkalProj_Datastrukturer_Minne/obj/Debug/net8.0/SkalProj_Datastrukturer_Minne.AssemblyInfoInputs.cache
+/Users/eliserochaix/Lexicon VT2025 C#/Ovning4_SkalProj-master/SkalProj_Datastrukturer_Minne/obj/Debug/net8.0/SkalProj_Datastrukturer_Minne.AssemblyInfo.cs
+/Users/eliserochaix/Lexicon VT2025 C#/Ovning4_SkalProj-master/SkalProj_Datastrukturer_Minne/obj/Debug/net8.0/SkalProj_Datastrukturer_Minne.csproj.CoreCompileInputs.cache
+/Users/eliserochaix/Lexicon VT2025 C#/Ovning4_SkalProj-master/SkalProj_Datastrukturer_Minne/obj/Debug/net8.0/SkalProj_Datastrukturer_Minne.dll
+/Users/eliserochaix/Lexicon VT2025 C#/Ovning4_SkalProj-master/SkalProj_Datastrukturer_Minne/obj/Debug/net8.0/refint/SkalProj_Datastrukturer_Minne.dll
+/Users/eliserochaix/Lexicon VT2025 C#/Ovning4_SkalProj-master/SkalProj_Datastrukturer_Minne/obj/Debug/net8.0/SkalProj_Datastrukturer_Minne.pdb
+/Users/eliserochaix/Lexicon VT2025 C#/Ovning4_SkalProj-master/SkalProj_Datastrukturer_Minne/obj/Debug/net8.0/SkalProj_Datastrukturer_Minne.genruntimeconfig.cache
+/Users/eliserochaix/Lexicon VT2025 C#/Ovning4_SkalProj-master/SkalProj_Datastrukturer_Minne/obj/Debug/net8.0/ref/SkalProj_Datastrukturer_Minne.dll
