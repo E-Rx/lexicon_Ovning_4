@@ -13,12 +13,13 @@ namespace SkalProj_Datastrukturer_Minne
 
             while (true)
             {
-                Console.WriteLine("Please navigate through the menu by inputting the number \n(1, 2, 3 ,4, 0) of your choice"
-                    + "\n1. Examine a List"
-                    + "\n2. Examine a Queue"
-                    + "\n3. Examine a Stack"
-                    + "\n4. CheckParenthesis"
-                    + "\n0. Exit the application");
+                Console.WriteLine(" == Main Menu =="
+                  + "\nPlease navigate through the menu by inputting the number \n(1, 2, 3 ,4, 0) of your choice"
+                  + "\n1. Examine a List"
+                  + "\n2. Examine a Queue"
+                  + "\n3. Examine a Stack"
+                  + "\n4. CheckParenthesis"
+                  + "\n0. Exit the application");
                 char input = ' '; //Creates the character input to be used with the switch-case below.
                 try
                 {
@@ -71,21 +72,24 @@ namespace SkalProj_Datastrukturer_Minne
              * As a default case, tell them to use only + or -
              * Below you can see some inspirational code to begin working.
             */
+
             // Create a list of strings
             List<string> theList = new List<string>();
-            
+
             // Create a boolean to control the loop
             bool stayInListMenu = true;
 
             while (stayInListMenu)
             {
-                Console.WriteLine("Please enter command:" +
-                    "\n+ (name) to add a person to the list. ex: +Adam" +
-                    "\n- (name) to remove a person from the list. ex: -Adam" +
-                    "\nL to see the list" +
-                    "\n0 to exit to main menu");
+              Console.WriteLine("== List Menu =="
+                + "\nPlease Enter a command:"
+                + "\n +Name  → Add a person to the list     (ex: +Adam)"
+                + "\n -Name  → Remove a person from the list (ex: -Adam)"
+                + "\n L      → Display the current list"
+                + "\n 0      → Return to main menu");
 
-                string input = Console.ReadLine();
+
+                string input = Console.ReadLine() ?? string.Empty;
 
                 if (string.IsNullOrEmpty(input))
                 {
@@ -124,8 +128,9 @@ namespace SkalProj_Datastrukturer_Minne
                         }
                         break;
                     case '0':
-                        stayInListMenu = false;
-                        break;
+                        Console.WriteLine("Returning to main menu...");
+                        Console.Clear();
+                        return;
                     default:
                         Console.WriteLine("Please enter a valid command");
                         break;
