@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("SkalProj_Datastrukturer_Minne")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+1d7b9b494d023583bd31d0c5adc79ffc7707a9be")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+fef08650787695de1dcfec9b2a779b06a6be5a36")]
 [assembly: System.Reflection.AssemblyProductAttribute("SkalProj_Datastrukturer_Minne")]
 [assembly: System.Reflection.AssemblyTitleAttribute("SkalProj_Datastrukturer_Minne")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -172,7 +172,7 @@ namespace SkalProj_Datastrukturer_Minne;
       }
 
 
-      
+
 
       /// <summary>
       /// Examines the datastructure Queue
@@ -547,11 +547,117 @@ namespace SkalProj_Datastrukturer_Minne;
 
       static void CheckParanthesis()
       {
+          /*
+          * Use this method to check if the paranthesis in a string is Correct or incorrect.
+          * Example of correct: (()), {}, [({})],  List<int> list = new List<int>() { 1, 2, 3, 4 };
+          * Example of incorrect: (()]), [), {[()}],  List<int> list = new List<int>() { 1, 2, 3, 4 );
+          */
 
+        bool running = true;
 
-/*          * Use this method to check if the paranthesis in a string is Correct or incorrect.
-            * Example of correct: (()), {}, [({})],  List<int> list = new List<int>() { 1, 2, 3, 4 };
-            * Example of incorrect: (()]), [), {[()}],  List<int> list = new List<int>() { 1, 2, 3, 4 );
-            */
+        while (running)
+        {
+          Console.WriteLine("\n=== Parenthesis Checker ===");
+          Console.WriteLine("This tool checks if all parentheses in a text are properly balanced.");
+          Console.WriteLine("Examples:");
+          Console.WriteLine("  Well-formed: (()), {}, [({})], { I love [chocolate (so)] much}");
+          Console.WriteLine("  Not well-formed: (()]), [), {[()]}, ( I {don't) love {chocolate ]");
+          Console.WriteLine("\nEnter a string with parentheses to check if they're balanced (or '0' to exit):");
+
+          string input = Console.ReadLine() ?? string.Empty;
+
+          if (input == "0")
+          {
+            Console.WriteLine("Returning to main menu...");
+            running = false;
+            Console.Clear();
+          }
+          else
+          {
+            bool isWellFormed = CheckParenthesis(input);
+
+            if (isWellFormed)
+            {
+              Console.WriteLine("✓ SUCCESS: All parentheses in your text are properly balanced!");
+            }
+            else
+            {
+              Console.WriteLine("✗ ERROR: The parentheses in your text are NOT properly balanced.");
+              Console.WriteLine("  Remember: Each opening bracket must have a matching closing bracket in the correct order.");
+            }
+
+            Console.WriteLine("\nPress any key to continue...");
+            Console.ReadKey();
+            Console.Clear();
+          }
+        }
       }
+
+        static bool CheckParenthesis(string input)
+        {
+
+          // Create a stack to hold the opening brackets
+          Stack<char> stack = new Stack<char>();
+
+          // Create a dictionary to match opening and closing brackets
+          // opening brackets are keys and closing brackets are values
+          Dictionary<char, char> bracketPairs = new Dictionary<char, char>
+          {
+            { '(', ')' },
+            { '{', '}' },
+            { '[', ']' }
+          };
+
+          // Go through each character in the input string
+          foreach (char c in input)
+          {
+            // If it's an opening bracket (contains key in the dictionary)
+            if (bracketPairs.ContainsKey(c))
+            {
+              // Push it onto the stack
+              stack.Push(c);
+            }
+            // If it's a closing bracket (contains value in the dictionary)
+            else if (bracketPairs.ContainsValue(c))
+            {
+              // Check if the stack is empty or if the current closing bracket doesn't match the expected one
+              if (stack.Count == 0)
+              {
+                // We have a closing bracket with no matching opening bracket
+                return false;
+              }
+
+              // Get the last opening bracket from the stack
+              char lastOpenBracket = stack.Pop();
+
+              // Check if the closing bracket matches what we expect for this opening bracket
+              if (bracketPairs[lastOpenBracket] != c)
+              {
+                return false;
+              }
+            }
+          }
+
+            // At the end, the stack should be empty if all brackets were properly closed
+            return stack.Count == 0;
+        }
+
+          /*
+          * Svar på frågorna:
+          *
+          * 1. Vilken datastruktur använder du?
+          *    Jag använder Stack strukturen tillsammans med en Dictionary.
+          *    Stack används för att hålla reda på öppningsparenteser enligt LIFO principen
+          *    vilket är perfekt för nästlade parenteser.
+          *    Dictionary används för att koppla ihop varje typ av öppningsparentes med dess
+          *    motsvarande stängningsparentes.
+          *
+          *    - För varje tecken i strängen:
+          *      - Om det är en öppningsparentes, lägg den på stacken (push)
+          *      - Om det är en stängningsparentes:
+          *        - Om stacken är tom, returnera false (inget matchande par)
+          *        - Ta bort den senaste öppningsparentesen från stacken (pop)
+          *        - Använd dictionary för att kontrollera om de matchar, annars returnera false
+          *    - I slutet, om stacken är tom är strängen välformad
+          */
   }
