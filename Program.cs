@@ -304,7 +304,7 @@ namespace SkalProj_Datastrukturer_Minne;
         // d. Kalle is served
         Console.WriteLine("\nd. Kalle is served and leaves the queue");
         string servedPerson = icaQueue.Dequeue();
-        Console.WriteLine($"{servedPerson} is served and leaves the queue");
+        Console.WriteLine($"Ciao {servedPerson}");
         PrintQueue(icaQueue);
 
         // e. Stina gets in line
@@ -315,7 +315,7 @@ namespace SkalProj_Datastrukturer_Minne;
         // f. Greta is served and leaves the queue
         Console.WriteLine("\nf. Greta is served and leaves the queue");
         servedPerson = icaQueue.Dequeue();
-        Console.WriteLine($"{servedPerson} is served and leaves the queue");
+        Console.WriteLine($"Ciao {servedPerson}");
         PrintQueue(icaQueue);
 
         // g. Olle gets in line
@@ -338,6 +338,7 @@ namespace SkalProj_Datastrukturer_Minne;
           * Loop this method until the user inputs something to exit to main menue.
           * Create a switch with cases to push or pop items
           * Make sure to look at the stack after pushing and and poping to see how it behaves
+          *
         */
 
         // Create a stack of strings
@@ -472,7 +473,7 @@ namespace SkalProj_Datastrukturer_Minne;
         // d. The last person in line is served (Greta)
         Console.WriteLine("\nd. The last person in line is served");
         string servedPerson = icaStack.Pop();
-        Console.WriteLine($"{servedPerson} is served and leaves the queue");
+        Console.WriteLine($"Ciao {servedPerson}");
         PrintStack(icaStack);
 
         // e. Stina gets in line
@@ -488,13 +489,13 @@ namespace SkalProj_Datastrukturer_Minne;
         // f. The last person in line is served (Olle)
         Console.WriteLine("\nf. The last person in line is served");
         servedPerson = icaStack.Pop();
-        Console.WriteLine($"{servedPerson} is served and leaves the queue");
+        Console.WriteLine($"Ciao {servedPerson} ");
         PrintStack(icaStack);
 
         // h. The last person in line is served (Stina)
         Console.WriteLine("\nh. The last person in line is served");
         servedPerson = icaStack.Pop();
-        Console.WriteLine($"{servedPerson} is served and leaves the queue");
+        Console.WriteLine($"Ciao {servedPerson} ");
         PrintStack(icaStack);
 
         Console.WriteLine("\nICA stack simulation completed.");
@@ -503,9 +504,11 @@ namespace SkalProj_Datastrukturer_Minne;
 
           /*
           * Svar på frågorna:
-          * Problem: I en stack betjänas den sista personen som anländer först (FILO).
+          *
+          * I en stack betjänas den sista personen som anländer först (FILO).
           * Så klart är detta inte rättvist för en butikskö där den första
           * personen som anlände borde betjänas först (FIFO).
+          *
           */
 
       private static void ReverseText()
@@ -659,5 +662,6 @@ namespace SkalProj_Datastrukturer_Minne;
           *        - Ta bort den senaste öppningsparentesen från stacken (pop)
           *        - Använd dictionary för att kontrollera om de matchar, annars returnera false
           *    - I slutet, om stacken är tom är strängen välformad
+          *
           */
   }
