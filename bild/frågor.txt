@@ -1,0 +1,91 @@
+** Frågor - Minneshantering: **
+1. Hur fungerar stacken och heapen? Förklara gärna med exempel eller skiss på dess
+grundläggande funktion
+2. Vad är Value Types respektive Reference Types och vad skiljer dem åt?
+3. Följande metoder (se bild nedan) genererar olika svar. Den första returnerar 3, den
+andra returnerar 4, varför?
+
+
+**Svar:**
+
+Stacken och heapen är två minnesområden som används på olika sätt under körningen av ett program.
+
+**Stacken:**
+- Det senaste elementet som läggs till är det första som tas bort.
+  (LIFO – Last In, First Out)
+- Lagrar lokala variabler, metodparametrar och anropsinformation för metoder.
+- Har en fast storlek som definieras vid programmets start.
+- Minneshanteringen sker automatiskt.
+- Mycket snabb åtkomst till data
+- *Exempel: I metoden `AddTen(int InputInt)` lagras variablerna `InputInt`
+  och `result` på stacken och frigörs automatiskt när metoden avslutas.
+
+**Heapen:**
+- En mindre organiserad struktur där objekt kan tilldelas och frigöras i vilken ordning som helst.
+- Lagrar objekt (instanser av klasser) och andra referenstyper.
+- Har en dynamisk storlek som kan växa vid behov.
+- Kräver minneshantering (av Garbage Collector i .NET)
+- Långsammare åtkomst än stacken
+- *Exempel: I metoden `AddTen(int InputInt)` i det andra exemplet
+  skapas objektet `result` av typen `MyInt` på heapen.
+
+---
+
+
+**Value Types (värdetyper):**
+- Ärver från `System.ValueType`
+- Lagrar sina data direkt
+- Tilldelas vanligtvis på stacken när de deklareras i metoder
+- Kopieras vid tilldelning (värdet kopieras)
+- Exempel: `int`, `bool`, `char`, `enum`, `struct`
+- Kan inte vara null (förutom om de deklareras som nullable med `?`)
+
+**Reference Types (referenstyper):**
+- Ärver från `System.Object`
+- Lagrar en referens (adress) till minnesplatsen där det verkliga objektet finns
+- Tilldelas alltid på heapen
+- Vid tilldelning kopieras endast referensen (två variabler kan peka på samma objekt)
+- Exempel: `class`, `interface`, `delegate`, `string`, `array`, `object`
+- Kan ha värdet null (avsaknad av referens)
+
+---
+** Skillnaden i beteende beror på vilken typ som används i varje metod:
+
+**ReturnValue() – Returnerar 3:**
+```csharp
+public int ReturnValue()
+{
+    int x = new int();
+    x = 3;
+    int y = new int();
+    y = x;
+    y = 4;
+    return x;
+}
+```
+I denna metod är `x` och `y` värdetyper (`int`).
+När `y = x` körs kopieras värdet av `x` (3) till `y`.
+När `y = 4` körs ändras bara värdet av `y`.
+Variabeln `x` behåller sitt ursprungliga värde (3).
+Alltså returnerar `return x` värdet 3.
+
+------
+
+**ReturnValue2() – Returnerar 4:**
+```csharp
+public int ReturnValue2()
+{
+    MyInt x = new MyInt();
+    x.MyValue = 3;
+    MyInt y = new MyInt();
+    y = x;
+    y.MyValue = 4;
+    return x.MyValue;
+}
+```
+I denna metod är `x` och `y` referenstyper (`MyInt`).
+Efter `y = x` pekar båda variablerna på samma objekt i minnet.
+När `y.MyValue = 4` körs ändras värdet på `MyValue` i det objekt som både `x` och `y` refererar till.
+Därför returnerar `return x.MyValue` värdet 4.
+
+---

@@ -149,7 +149,7 @@ namespace SkalProj_Datastrukturer_Minne;
         }
 
           /*
-        * Svar på frågorna:
+        * Svar på frågorna övning 1:
         *
         * 2. När ökar listans kapacitet?
         *    Kapaciteten ökar när ett nytt element läggs till.
@@ -503,7 +503,7 @@ namespace SkalProj_Datastrukturer_Minne;
       }
 
           /*
-          * Svar på frågorna:
+          * Svar på frågorna övning 3:
           *
           * I en stack betjänas den sista personen som anländer först (FILO).
           * Så klart är detta inte rättvist för en butikskö där den första
@@ -614,23 +614,19 @@ namespace SkalProj_Datastrukturer_Minne;
           // Go through each character in the input string
           foreach (char c in input)
           {
-            // If it's an opening bracket (contains key in the dictionary)
+            // If it's an opening bracket (contains key in the dictionary) Push it onto the stack
             if (bracketPairs.ContainsKey(c))
             {
-              // Push it onto the stack
               stack.Push(c);
             }
-            // If it's a closing bracket (contains value in the dictionary)
+            // If it's a closing bracket (contains value in the dictionary) pop it from the stack
             else if (bracketPairs.ContainsValue(c))
             {
-              // Check if the stack is empty or if the current closing bracket doesn't match the expected one
               if (stack.Count == 0)
               {
                 // We have a closing bracket with no matching opening bracket
                 return false;
               }
-
-              // Get the last opening bracket from the stack
               char lastOpenBracket = stack.Pop();
 
               // Check if the closing bracket matches what we expect for this opening bracket
@@ -646,7 +642,7 @@ namespace SkalProj_Datastrukturer_Minne;
         }
 
           /*
-          * Svar på frågorna:
+          * Svar på frågorna övning 4:
           *
           * 1. Vilken datastruktur använder du?
           *    Jag använder Stack strukturen tillsammans med en Dictionary.
